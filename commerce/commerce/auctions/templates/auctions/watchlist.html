@@ -1,0 +1,29 @@
+{%extends "auctions/layout.html"%}
+
+{%block body%}
+{%if watches%}
+    <h2>Watchlist</h2>
+{%for watch in watches%}
+    <ul class="item_list">
+        <li class="nav-item">
+            <h3><a class= "nav-link" href="{% url 'listing' watch.name %}">{{watch.name}}</a></h3>
+        </li>
+         {% if watch.image %}
+               <img src="{{watch.image.url}}" class="watch_img"><br>
+        {%else%}
+             <img src="/media/listing_image/no_image.png" class="watch_img">
+        {%endif%}                     
+                <h5>Current price:<span class="listing">${{watch.price}}</span></h5>   
+                <form action="{%url 'listing' watch.name%}">
+                <input type="submit" class="btn btn-primary" value="Bid Now">
+                </form>
+                <hr>
+  
+   
+         
+    </ul>
+    {%endfor%}
+{%else%}
+    <h2>No items in watch list.</h2>
+{%endif%}
+{%endblock%}
