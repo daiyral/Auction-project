@@ -1,0 +1,89 @@
+body {
+    padding: 10px;
+}
+.list_img{
+    height:500px;
+    width:500px;
+    max-width:100%;
+    border:1px solid #999;
+    float:left;
+    margin-right:20px;
+    margin-bottom:5px;
+}
+.listing{
+    font-weight:bold;
+    font-family:sans-serif;
+}
+
+#watch_btn{
+    margin-top:10px;
+}
+.item_list{
+    list-style-type:none;
+}
+.grey_box{
+    text-align:left;
+    margin:20px;
+    padding:20px;
+    overflow:hidden; 
+    position: relative;
+    border:1px solid rgba(199, 199, 199, 0.2);  
+    width:500px;
+    height:130px;
+    background-color: rgb(240, 236, 236);
+    box-shadow:-1px -1px 12px -5px rgba(0,0,0,0.75);
+}
+#bid_btn{
+    margin-left:20px;
+}
+#watch_btn{
+    position:relative;
+    margin-left:330px;
+    bottom: 48px;
+}
+.container{    
+    text-align:center;    
+}
+.division{
+    margin:20px;
+}
+.next_item{
+    margin-top:200px;
+}
+#bid{
+    width:200px;
+}
+.messages{
+    color:rgb(190, 53, 53);
+    position:relative;
+    left:550px;
+    bottom:130px;
+}
+.bidder{
+    margin-left:9px;
+    font:monospace;
+    font-size:14px;
+}
+.watch_img{
+    width:200px;
+    height:200px;
+    border:1px solid #999;
+}
+
+
+.card-image{
+    display:flex;
+    width:200px;
+    height:200px;
+}
+.card{
+    margin:20px;
+    padding:20px;
+}
+.card-text,#index_btn,#category{
+    margin:10px;
+}
+#move{
+    width:70rem;
+    margin-top:200px;
+}

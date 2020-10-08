@@ -1,0 +1,41 @@
+{%extends "auctions/layout.html"%}
+
+
+{%block body%}
+{%if category%}
+    <h2>Showing results for: {{category}}</h2>
+{%else%}
+<h2>Filter by:</h2>
+ <ul class="nav nav-pills">
+    {%for cat in allcats%}
+        <li class="nav-item">
+            <a class="nav-link active" id="category" href="{%url 'category' cat%}">{{cat}}</a>
+        </li> 
+     {%endfor%}   
+    </ul>
+{%endif%}
+{%if listings%}
+    {%for listing in listings%}
+        <div class="card flex-row flex-wrap">
+        <div class="card-header border-0">
+                {% if listing.image %}
+                    <img src="{{listing.image.url}}" class="card-image">
+                {%else%}
+                <img src="/media/listing_image/no_image.png" class="card-image">
+                 {%endif%}
+        </div>
+            <div class="card-block px-2">
+                <h4 class="card-title"><a class= "nav-link" href="{% url 'listing' listing.name %}">{{listing.name}}</a></h4>
+                <p class="card-text">{{listing.description}}</p>
+                <p class="card-text">Price: ${{listing.price}}</p>
+                <a href="{%url 'listing' listing.name%}" id="index_btn" class="btn btn-primary">Bid Now</a>
+            </div>
+            <div class="w-100"></div>
+            <div class="card-footer w-100 text-muted">
+                Seller: {{listing.seller}} <br>Posted on: {{listing.date}}
+            </div>
+    {%endfor%}   
+{%elif flag %}
+        <h2> No results.</h2>
+ {%endif%}   
+{%endblock%}
